@@ -1,4 +1,4 @@
-package br.com.detroit.microservice;
+package br.com.detroit.store;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
