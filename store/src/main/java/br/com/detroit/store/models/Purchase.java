@@ -1,9 +1,10 @@
 package br.com.detroit.store.models;
 
-public class Buy {
+public class Purchase {
 	
 	private Long orderId;
 	private Long userId;
+	private String state;
 	
 	public Long getOrderId() {
 		return orderId;
@@ -16,5 +17,11 @@ public class Buy {
 	}
 	public void setUserId(Long userId) {
 		this.userId = userId;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
 	}
 }

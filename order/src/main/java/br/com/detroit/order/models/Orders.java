@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 import br.com.detroit.order.enums.OrderState;
 
 @Entity
-public class Order {
+public class Orders {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -28,11 +28,11 @@ public class Order {
 	@JoinColumn(name="orderId")
 	private List<OrderItems> orderItems;
 	
-	public Order() {
+	public Orders() {
 		
 	}
 	
-	public Order(List<OrderItems> orderItems) {
+	public Orders(List<OrderItems> orderItems) {
 		this.orderItems = orderItems;
 		this.state = OrderState.SUBMIT;
 	}

@@ -6,20 +6,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.detroit.store.dtos.BuyDTO;
-import br.com.detroit.store.models.Buy;
-import br.com.detroit.store.services.BuyService;
+import br.com.detroit.store.dtos.PurchaseDTO;
+import br.com.detroit.store.models.Purchase;
+import br.com.detroit.store.services.PurchaseService;
 
 @RestController
-@RequestMapping("/buy")
-public class BuyController {
+@RequestMapping("/purchase")
+public class PurchaseController {
 	
 	@Autowired
-	private BuyService buyService;
+	private PurchaseService purchaseService;
 	
 	@PostMapping
-	public Buy purchase(@RequestBody BuyDTO buy) {
-		return buyService.purchase(buy);
+	public Purchase purchase(@RequestBody PurchaseDTO purchase) {
+		return purchaseService.purchase(purchase);
 	}
 	
 }

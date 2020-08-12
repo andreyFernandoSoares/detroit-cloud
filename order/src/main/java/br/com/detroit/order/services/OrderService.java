@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.detroit.order.dtos.OrderItemsDTO;
-import br.com.detroit.order.models.Order;
 import br.com.detroit.order.models.OrderItems;
+import br.com.detroit.order.models.Orders;
 import br.com.detroit.order.models.Product;
 import br.com.detroit.order.repositories.OrderRepository;
 import br.com.detroit.order.repositories.ProductRepository;
@@ -22,17 +22,17 @@ public class OrderService {
 	@Autowired
 	private ProductRepository productRepository;
 
-	public Order placeOrder(List<OrderItemsDTO> items) {
+	public Orders placeOrder(List<OrderItemsDTO> items) {
 		
 		if (items == null) return null;
 		
 		List<OrderItems> orderItems = toOrderItem(items);
-		Order order = new Order(orderItems);
+		Orders order = new Orders(orderItems);
 		return orderRepository.save(order);
 	}
 
-	public Order getOrderById(Long id) {
-		return this.orderRepository.findById(id).orElse(new Order());
+	public Orders getOrderById(Long id) {
+		return this.orderRepository.findById(id).orElse(new Orders());
 	}
 	
 	public List<OrderItems> toOrderItem(List<OrderItemsDTO> items){
